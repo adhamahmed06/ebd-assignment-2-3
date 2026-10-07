@@ -16,7 +16,7 @@
  * @returns {string}
  */
 export function productName(product) {
-  // TODO: read it with a dot.
+  return product.name;
   throw new Error("productName is not written yet");
 }
 
@@ -31,7 +31,7 @@ export function productName(product) {
  * @returns {*} whatever is stored under that key
  */
 export function getField(product, field) {
-  // TODO: the key is in a variable, so a dot will not work here.
+  return product[field];
   throw new Error("getField is not written yet");
 }
 
@@ -44,7 +44,7 @@ export function getField(product, field) {
  * @returns {string}
  */
 export function studentCity(student) {
-  // TODO: follow the path down to city.
+  return student.address.city;
   throw new Error("studentCity is not written yet");
 }
 
@@ -58,7 +58,8 @@ export function studentCity(student) {
  * @returns {string}
  */
 export function summarize(product) {
-  // TODO: destructure name and price, then return a template literal.
+  const { name, price } = product;
+return `${name} costs ${price} EGP`;
   throw new Error("summarize is not written yet");
 }
 
@@ -74,6 +75,6 @@ export function summarize(product) {
  * @returns {object} a new product, with every other key the same
  */
 export function withPrice(product, newPrice) {
-  // TODO: spread the old product, then override price.
+  return { ...product, price: newPrice };
   throw new Error("withPrice is not written yet");
 }
