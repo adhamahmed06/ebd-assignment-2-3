@@ -14,7 +14,7 @@
  * @returns {string} trimmed and upper-cased
  */
 export function shout(text) {
-  // TODO: trim it, then upper-case the result. You can chain both on one line.
+  return text.trim().toUpperCase();
   throw new Error("shout is not written yet");
 }
 
@@ -30,7 +30,11 @@ export function shout(text) {
  * @returns {string}
  */
 export function initials(fullName) {
-  // TODO: split, map, join. All three are from earlier modules.
+  return fullName
+  .split(" ")
+  .map((part) => part[0])
+  .join("")
+  .toUpperCase();
   throw new Error("initials is not written yet");
 }
 
@@ -42,7 +46,7 @@ export function initials(fullName) {
  * @returns {string} the product as JSON text
  */
 export function toJson(product) {
-  // TODO: one call does this.
+  return JSON.stringify(product);
   throw new Error("toJson is not written yet");
 }
 
@@ -56,7 +60,7 @@ export function toJson(product) {
  * @returns {string}
  */
 export function displayName(student) {
-  // TODO: an empty string and a missing key are both falsy.
+  return student.name || "Unknown student";
   throw new Error("displayName is not written yet");
 }
 
@@ -77,4 +81,7 @@ export function displayName(student) {
  * Remember `export`.
  */
 
-// TODO: write summaryFromJson here.
+export function summaryFromJson(jsonText) {
+  const product = JSON.parse(jsonText);
+  return `${product.name} costs ${product.price} EGP`;
+}
